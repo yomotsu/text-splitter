@@ -1,0 +1,12 @@
+{
+  "name": "text-splitter",
+  "version": "0.0.0",
+  "description": "split text to characters with span elements",
+  "author": "yomotsu",
+  "license": "MIT",
+  "main": "./text-splitter.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yomotsu/text-splitter.git"
+  }
+}

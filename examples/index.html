@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="format-detection" content="email=no,telephone=no,address=no">
+<title>=^.^=</title>
+<style>
+.char {
+	animation: anim .8s calc( var( --char-index-of-line ) * 0.02s + 0.1s + var( --line-index ) * 0.05s ) 1 both;
+}
+
+@keyframes anim {
+	0% {
+		color: #ccc;
+	}
+	30% {
+		color: red;
+	}
+	60% {
+		color: blue;
+	}
+	100% {
+		color: #000;
+	}
+}
+</style>
+<script type="module">
+import { TextSplitter } from '../text-splitter.js';
+
+document.querySelectorAll( 'p' ).forEach( ( p, lineIndex ) => {
+
+	const textSplitter = new TextSplitter( p );
+
+	const onUpdate = () => {
+
+		textSplitter.lines.forEach( ( line, i ) => {
+
+		const isEven = ( i + 1 ) % 2 === 0;
+
+		line.forEach( ( char ) => {
+
+			char.classList.toggle( '-odd', ! isEven );
+			char.classList.toggle( '-even', isEven );
+
+		} );
+
+	} );
+
+	};
+
+	onUpdate();
+	textSplitter.addEventListener( 'updated', onUpdate );
+
+} );
+</script>
+</head>
+<body>
+
+
+<div>
+	<p>
+		親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰を抜かす奴があるかと云ったから、この次は抜かさずに飛んで見せますと答えた。（青空文庫より）
+	</p>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
+	<p>
+		親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰を抜かす奴があるかと云ったから、この次は抜かさずに飛んで見せますと答えた。（青空文庫より）
+	</p>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
+</div>
+
+</body>
+</html>
